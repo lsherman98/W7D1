@@ -12,7 +12,7 @@ class CatsController < ApplicationController
 
     def create
         @cat = Cat.new(cat_params)
-
+# debugger
         if @cat.save
            redirect_to cat_url(@cat)
         else
@@ -22,7 +22,7 @@ class CatsController < ApplicationController
     end
 
     def new
-
+# debugger
         @cat = Cat.new
         render :new
 
@@ -30,14 +30,14 @@ class CatsController < ApplicationController
 
     def edit
 
-        @cat = Cat.find(cat_params)
+        @cat = Cat.find(params[:id])
         render :edit
 
     end
 
     def update
 
-        @cat = Cat.find(cat_params)
+        @cat = Cat.find(params[:id])
 
         if @cat.update(cat_params)
             redirect_to cat_url(@cat)

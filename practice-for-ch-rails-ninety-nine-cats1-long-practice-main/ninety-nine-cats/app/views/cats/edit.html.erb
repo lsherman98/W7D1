@@ -1,0 +1,37 @@
+<h1>Edit page</h1>
+
+
+<form action="<%= cat_url(@cat) %>" method="POST">
+<input type = "hidden" name = "_method" value = "PATCH" >
+
+    <label for="name">Name:
+        <input type = "text" id= "name" name= "cat[name]" value = "<%= @cat.name%>"> 
+    </label>
+
+    <label for="M">Male:
+        <input type = "radio" id = "M" name = "cat[sex]" value = "M" <%= "checked" ? @cat.sex == "M" : "" %>>
+    </label>
+
+    <label for="F">Female:
+        <input type = "radio" id = "F" name = "cat[sex]" value = "F" <%= "checked" ? @cat.sex == "F" : "" %> >
+    </label>
+    
+
+    <select name ="cat[color]">
+        <option value = "black" <%= "selected" ? @cat.color == "black" :"" %>>black</option>
+        <option value = "brown" <%= "selected" ? @cat.color == "brown" :"" %>>brown</option>
+        <option value = "blue" <%= "selected" ? @cat.color == "blue" :"" %>>blue</option>
+        <option value = "red" <%= "selected" ? @cat.color == "red" :"" %>>red</option>
+    </select>
+
+    <label for="birth_date">birth_date
+        <input type= "date" id = "birth_date" name = "cat[birth_date]" value = "<%= @cat.birth_date%>">
+    </label>
+
+    <label for="description">Description:
+        <textarea id= "description" name= "cat[description]" value = "<%= @cat.name%>"></textarea>
+    </label>
+
+    <button type= "submit">Submit</button>
+
+</form>
