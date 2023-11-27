@@ -1,0 +1,16 @@
+<h1>Cats Index Page</h1>
+
+
+
+<ul> 
+    <% @cats.each do |cat| %>
+    <li>
+    <%= cat.name %>
+    <%= cat.color %>
+    <%= cat.sex %>
+    <%= cat.birth_date %>
+    <%= cat.description %>
+    </li>
+    <% end %>
+</ul>
+
